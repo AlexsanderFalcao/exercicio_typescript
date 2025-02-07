@@ -1,40 +1,10 @@
-interface Operacao {
-    calcular(): number;
-  }
-  
-  class Multiplicacao implements Operacao {
-    private readonly x: number;
-    private readonly y: number;
-  
-    constructor(x: number, y: number) {
-      this.x = x;
-      this.y = y;
-    }
-  
-    calcular(): number {
-      return this.x * this.y;
-    }
-  }
-  
-  function exibirResultado(operacao: Operacao): void {
-    console.log(`Resultado da operação: ${operacao.calcular()}`);
-  }
-  
-  class Saudacao {
-    private readonly nome: string;
-  
-    constructor(nome: string) {
-      this.nome = nome;
-    }
-  
-    saudar(): string {
-      const mensagem = `Olá, ${this.nome}! Espero que você esteja bem.`;
-      return mensagem;
-    }
-  }
+function multiplicar(x: number, y: number): number {
+  return x * y;
+}
 
-  const multiplicacao = new Multiplicacao(5, 7);
-  exibirResultado(multiplicacao);
-  
-  const saudacao = new Saudacao("Alexsander");
-  console.log(saudacao.saudar());  
+function saudar(nome: string): string {
+  return `Olá, ${nome}`;
+}
+
+console.log(`Resultado da multiplicação: ${multiplicar(5, 7)}`);
+console.log(saudar("Alexsander"));
